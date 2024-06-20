@@ -27,7 +27,7 @@ class MEDTS(nn.Module):
         self.init_prompt_value = self.t5_decoder.encoder.embed_tokens.weight
         self.mapping_layer = nn.Linear(self.init_prompt_value.shape[0], n_tokens)
         # self.puzzle_token = [0, 1, 27137, 3, 6, 7, 8, 9, 11, 526, 15, 17, 18, 19, 21010, 29, 26653, 35, 9773, 6190, 6189, 1080, 13369, 16443, 60, 63, 66, 8264, 4169, 2632, 80, 2641, 88, 97, 102, 107, 27757, 630, 27255, 1146, 2176, 1666, 6786, 648, 145, 662, 152, 6808, 9378, 13492, 1717, 21182, 192, 1227, 19662, 729, 12521, 12010, 235, 782, 1296, 11035, 31006, 324, 1364, 2388, 2391, 30552, 2407, 874, 1389, 1408, 386, 6546, 17310, 20394, 18358, 3555, 22513, 509]
-        kg = json.load(open("/home/comp/cssniu/promptt5/llm_rationale_medts/data/knowledgegraph.json"))
+        kg = json.load(open("xxx/knowledgegraph.json"))
         self.kg =[i.replace("' ","'") for i in list(kg.values())]
         
         puzzle_token = list(set([tk for tks in self.tokenizer(self.kg)["input_ids"] for tk in tks]))
