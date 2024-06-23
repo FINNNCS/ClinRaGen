@@ -29,7 +29,7 @@ import dill
 import copy
 import time
 start = time.time()
-SEED = 3407 #gpu23 model 2
+SEED = xxx #gpu23 model 2
 import json
 import getpass
 import argparse
